@@ -1,0 +1,22 @@
+{
+  "name": "wonyotti-research-console",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Research-only static console for the Wonyotti public trade-history study guide.",
+  "scripts": {
+    "check": "node scripts/check.mjs",
+    "test": "node --test --test-concurrency=1 tests/*.test.mjs",
+    "test:browser": "playwright test",
+    "preview": "node scripts/preview.mjs",
+    "build": "node scripts/build.mjs"
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.13.0",
+    "@playwright/test": "^1.63.0",
+    "jsdom": "^29.1.1"
+  }
+}
