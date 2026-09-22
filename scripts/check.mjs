@@ -1,0 +1,11 @@
+import { readFile } from "node:fs/promises";
+import vm from "node:vm";
+const [html,readme,config]=await Promise.all([readFile("index.html","utf8"),readFile("README.md","utf8"),readFile("vercel.json","utf8")]);
+for(const marker of ["NOT_ACQUIRED","UNVERIFIED","LIVE TRADING OFF","BLOCKED_SOURCE","24,562.5%","Research only"]) if(!html.includes(marker)) throw new Error(`index missing: ${marker}`);
+for(const marker of ["Coin Quant Bot — 워뇨띠 공개 거래내역 Agent 가이드",'dataset_status: "NOT_ACQUIRED"',"live_trading_enabled: false","## 25. 필수 테스트와 기대 결과","## 28. 출처와 확인 범위"]) if(!readme.includes(marker)) throw new Error(`README missing: ${marker}`);
+const scripts=[...html.matchAll(/<script>([\s\S]*?)<\/script>/g)].map(m=>m[1]);
+if(scripts.length!==1) throw new Error(`expected one inline script, found ${scripts.length}`);
+for(const source of scripts) new vm.Script(source);
+const parsed=JSON.parse(config);
+if(parsed.outputDirectory!=="dist"||parsed.buildCommand!=="npm run build") throw new Error("Vercel config mismatch");
+console.log("Static checks passed: README, fail-closed markers, inline JS, Vercel config.");

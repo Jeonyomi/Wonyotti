@@ -1,0 +1,9 @@
+{
+  "name": "wonyotti-research-console",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Research-only static console for the Wonyotti public trade-history study guide.",
+  "scripts": {"check": "node scripts/check.mjs", "build": "node scripts/build.mjs"},
+  "engines": {"node": ">=20"}
+}
