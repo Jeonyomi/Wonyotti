@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#f5f4ee"/>
+  <path d="M840 0H1200V630H840Z" fill="#e7ebe1"/>
+  <g fill="none" stroke="#ced7c8" stroke-width="1"><path d="M880 0V630M960 0V630M1040 0V630M1120 0V630M840 80H1200M840 160H1200M840 240H1200M840 320H1200M840 400H1200M840 480H1200M840 560H1200"/></g>
+  <rect x="64" y="56" width="46" height="46" rx="12" fill="#183f35"/>
+  <text x="74" y="88" font-family="Arial,sans-serif" font-size="29" font-weight="700" fill="#ffffff">W</text>
+  <text x="127" y="87" font-family="Arial,sans-serif" font-size="26" font-weight="700" fill="#183f35">Wonyotti Research</text>
+  <text x="66" y="178" font-family="Arial,sans-serif" font-size="17" letter-spacing="3" fill="#597064">EVIDENCE BEFORE PERFORMANCE</text>
+  <g font-family="Malgun Gothic,Apple SD Gothic Neo,sans-serif" fill="#183f35" font-weight="700"><text x="61" y="273" font-size="64">수익의 숫자보다,</text><text x="61" y="355" font-size="64">검증의 과정을.</text></g>
+  <text x="66" y="422" font-family="Malgun Gothic,Apple SD Gothic Neo,sans-serif" font-size="24" fill="#52625a">공개 거래내역을 위한 독립 연구 노트</text>
+  <rect x="64" y="483" width="427" height="48" rx="24" fill="#eee3ca"/>
+  <text x="86" y="515" font-family="Malgun Gothic,Apple SD Gothic Neo,sans-serif" font-size="20" fill="#755320">원본 미확보 · 분석 미실행 · 실거래 없음</text>
+  <g transform="translate(888 186)"><rect width="249" height="226" rx="18" fill="#ffffff" stroke="#cbd5c7"/><rect x="28" y="30" width="45" height="5" rx="2.5" fill="#91a88c"/><text x="27" y="89" font-family="Arial,sans-serif" font-size="22" font-weight="700" fill="#183f35">RESEARCH ONLY</text><path d="M28 117H221" stroke="#dfe5dc"/><text x="28" y="152" font-family="Arial,sans-serif" font-size="14" fill="#627463">SOURCE</text><text x="28" y="183" font-family="Arial,sans-serif" font-size="17" font-weight="700" fill="#755320">NOT_ACQUIRED</text></g>
+  <text x="65" y="589" font-family="Arial,sans-serif" font-size="14" letter-spacing="2" fill="#68776b">INDEPENDENT STUDY / NOT INVESTMENT ADVICE</text>
+</svg>

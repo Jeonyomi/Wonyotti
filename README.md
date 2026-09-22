@@ -19,7 +19,39 @@ original_dataset_sha256: null
 # Coin Quant Bot — 워뇨띠 공개 거래내역 Agent 가이드
 
 > [!NOTE]
-> **Phase 1 dummy implementation (2026-09-22):** 이 저장소는 현재 Vercel 배포 가능한 정적 연구 콘솔과 본 연구 가이드를 제공합니다. 실제 워뇨띠 거래·지갑 원본은 아직 확보되지 않았으며, 분석·검증·백테스트·실거래는 수행되지 않았습니다. 로컬 검증은 `npm run check`, 정적 빌드는 `npm run build`로 실행합니다.
+> **원본 데이터 미확보.** `dataset_status: NOT_ACQUIRED`, `schema_status: UNVERIFIED`, `verification_status: NOT_RUN`, `backtest_status: NOT_RUN`, `live_trading_enabled: false`입니다. 원문 게시 URL과 게시 시각도 확인되지 않았습니다. 기준일 **2026-09-22**는 수동으로 기록한 연구 현황이며, 실시간 조회 시각이나 원문 게시일이 아닙니다.
+
+워뇨띠 공개 거래내역에 관한 주장과 검증 절차를 구분해 읽을 수 있는 정적 연구 안내 사이트와 상세 가이드입니다. 실제 거래 성과를 보여주는 대시보드나 자동매매 서비스가 아닙니다.
+
+[전체 연구 가이드](#research-guide) · [개발·공개 체크리스트](docs/PUBLISHING.md) · [정보·출처·개인정보 원칙](docs/INFORMATION-POLICY.md) · [오류 제보](https://github.com/Jeonyomi/Wonyotti/issues)
+
+이 프로젝트는 워뇨띠·BitMEX와 제휴하거나 이들의 승인·보증을 받은 공식 서비스가 아닌 독립 비공식 프로젝트입니다. 교육·연구 목적이며 투자 조언, 매매 추천, 성과 보장을 제공하지 않습니다. API 문서와 논문 링크는 검증 방법의 참고자료이지 원본 확보·거래 진위·계정 소유의 증거가 아닙니다.
+
+### 읽기 전에
+
+- 현재 제공하는 것은 연구 안내 화면과 문서입니다. 아래 수집·정규화·대사·전략 모듈, CLI, G0–G6 절차는 **구현·검증 제안**이며 완료된 분석 기능이 아닙니다.
+- 실제 데이터 감사·장부 대사 보고서와 백테스트 결과는 없습니다. 근거 없는 성과 KPI나 진행률로 빈자리를 채우지 않습니다.
+- 아래 연구 가이드 본문은 작성 당시 기록을 보존합니다. **§1.2·S1의 거래 서비스 종료 시각과 종료 후 계정 접근 범위는 2026-09-22에 공식 지원 API로 재확인했습니다.** 가이드의 공지 개정일 표기는 과거 기록이며, 현재 공개 아카이브의 지속 제공까지 보장하는 것은 아닙니다. [점검 범위와 남은 확인 사항](docs/INFORMATION-POLICY.md#information-audit)을 함께 읽어 주세요.
+
+### 로컬 개발
+
+브라우저 실행 코드는 HTML·CSS·JavaScript이며 런타임 패키지 의존성은 없습니다. jsdom·Playwright·axe는 개발·검사용 의존성입니다. 개발·검증에는 Node.js 24 이상이 필요하며, 잠금 파일에 맞춰 의존성을 설치합니다.
+
+```bash
+npm ci
+npx playwright install chromium
+npm test
+npm run check
+npm run build
+npm run test:browser
+npm run preview
+```
+
+위 명령은 실행 안내이지 테스트 통과나 배포 완료 기록이 아닙니다. 빌드 결과는 `dist/`이며, 미리보기는 로컬 확인용입니다. 공개·push·배포와 검색 색인 허용은 별도 승인 대상이며, 승인 전에는 `noindex`를 유지합니다. 원본 거래·지갑 데이터, 지갑 주소, API 키·개인키 등 비밀정보를 Git이나 공개 이슈에 올리지 마세요.
+
+<a id="research-guide"></a>
+
+---
 
 
 > **목적:** 공개 거래·지갑 원본을 확보하고, 체결과 자금 흐름을 검증한 뒤, 재현 가능한 매매 행동을 연구하여 기존 Coin Quant Bot의 후보 전략으로 통합한다.
